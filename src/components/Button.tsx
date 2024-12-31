@@ -5,15 +5,21 @@ import 'scss/components/Button.scss';
 interface ButtonProps extends React.HTMLAttributes<HTMLDivElement> {
     to: string,
     text: string,
+    anim?:string,
     dark?: boolean,
 }
 
-const Button: FC<ButtonProps> = ({ to, text, dark = false, className }) => {
+const Button: FC<ButtonProps> = ({ to, text, dark = false, anim = 'hover', className, ...rest }) => {
     return (
-        <Link to={to} className={`BlueButton ${dark?"dark":"light"} ${className}`}>
-            <p className=''>
-                {text}
-            </p>
+        // here the class name extended manually because we already use the class name 
+        // feature here, and thus if we not do it manually, the other assignment of 
+        // class name would replace the already existing one
+        <Link to={to} className={`clickArea ${anim}`}>
+            <div className={`BlueButton ${dark ? "dark" : "light"} ${className}`} {...rest}>
+                <p className=''>
+                    {text}
+                </p>
+            </div>
         </Link>
     )
 }

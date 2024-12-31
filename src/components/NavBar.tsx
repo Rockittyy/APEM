@@ -4,19 +4,19 @@ import { Link } from 'react-router-dom'
 import { ReactComponent as Logo } from "media/Apem/ApemSmall.svg"
 import Button from './Button'
 
-interface NavBarProps  {
+interface NavBarProps {
 
 }
 
 const NavBar: FC<NavBarProps> = ({ }) => {
   return (
-    <nav>
+    <nav id='mainNav'>
       <Link to="/">
         <Logo />
       </Link>
       <div className="loginSignup">
-        <Link to={'/'} className='LoginButton'><h2>LOGIN</h2></Link>
-        <Button to='/' text='SINGUP' />
+        <Link to={'/debug/1'} className='LoginButton clickArea hover'><h2>LOGIN</h2></Link>
+        <Button to='/debug/2' text='SINGUP' />
       </div>
     </nav>
   )

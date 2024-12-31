@@ -16,7 +16,7 @@ interface headerProps {
 
 const Header: FC<headerProps> = ({ }) => {
   return (
-    <header className='centerFlex'>
+    <header className='mainSection'>
 
       <main className="content">
 

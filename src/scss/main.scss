@@ -1,5 +1,6 @@
 // Colors for background (sky and ground)
 $SkyHeader: #9bc9ff;
+$SkyPhase2: #b1f1ff;
 
 // Color palete
 $BlueMain: #096f8e;
@@ -16,27 +17,39 @@ $White: white; //for controll
 
 body {
     overflow: overlay;
-    &.Page {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-    }
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    margin: 0;
 }
+// body {
+//     overflow: overlay;
+//     &.Page {
+//         width: 100%;
+//         height: 100%;
+//         margin: 0;
+//     }
+// }
 
 header,
 section {
-    width: 100%;
-    min-height: 100vh;
+    &.mainSection {
+        width: 100%;
+        min-height: 100vh;
+    }
+}
+
+.HomePage {
+    background-color: $SkyHeader;
 }
 
 a {
     text-decoration: none;
 }
 
-img{
+img {
     // pointer-events: none;
 }
-
 
 // h1,
 // .h1 {
@@ -51,13 +64,59 @@ img{
 // .h3 {
 // }
 
-.centerFlex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+// styles
+
+@mixin clickPoint($point: true) {
+    @if $point {
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
 
-// styles
+@mixin ExtraClickBox($size, $point: true) {
+    width: fit-content;
+    height: fit-content;
+    padding: $size;
+    margin: $size * -1;
+    @include clickPoint($point);
+}
+@mixin ExtraClickRect($sizeT, $sizeR, $sizeB, $sizeL, $point: true) {
+    width: fit-content;
+    height: fit-content;
+    padding: $sizeT $sizeR $sizeB $sizeL;
+    margin: $sizeT * -1 $sizeR * -1 $sizeB * -1 $sizeL * -1;
+    @include clickPoint($point);
+}
+
+@mixin center($type: absolute, $x: true, $y: true) {
+    @if $type == flex {
+        display: flex;
+        @if $x {
+            justify-content: center;
+        }
+        @if $y {
+            align-items: center;
+        }
+    } @else {
+        // center fixed
+        position: $type;
+        @if $x {
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+        @if $y {
+            top: 50%;
+            transform: translate(0, -50%);
+        }
+        @if $x and $y {
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+.centerFlex {
+    @include center(flex);
+}
 
 @mixin boldStyle {
     & *,

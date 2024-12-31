@@ -1,15 +1,12 @@
 @import "scss/main.scss";
 
-nav {
+nav#mainNav {
     z-index: 1000;
     // background-color: red;
-    position: fixed;
     height: 100px;
     width: 95%;
 
-    // center fixed
-    left: 50%;
-    transform: translate(-50%, 0);
+    @include center(fixed,true,false);
 
     display: flex;
 

@@ -1,14 +1,15 @@
 import React, { FC } from 'react'
 
-interface arrowProps {
+interface arrowProps extends React.HTMLAttributes<SVGSVGElement> {
     colors: string,
-    facingRight: boolean,
+    pointingRight?: boolean,
     rotation?: string,
 }
 
-const Arrow: FC<arrowProps> = ({ colors, facingRight, rotation = "0deg" }) => {
+const Arrow: FC<arrowProps> = ({ colors, pointingRight: facingRight = false, rotation = "0deg", ...rest }) => {
     return (
         <svg width="44" height="89" viewBox="0 0 44 89" fill="none" xmlns="http://www.w3.org/2000/svg"
+            {...rest}
             style={{ "transform": `scale(${facingRight ? 1 : -1},1) rotate(${rotation})` }}>
             {/* that will flip depend on the paramater */}
 

@@ -1,5 +1,22 @@
 @import "scss/main.scss";
 
+.clickArea.hover {
+    $height:10px;
+    @include ExtraClickRect($height, 0, 0, 0);
+    & > :first-child {
+        transition: all 0.2s ease-in-out 0s;
+        position: relative;
+        top: 0px;
+    }
+
+    &:hover {
+        & > :first-child {
+            top: -$height;
+        }
+    }
+}
+
+// for the layout and shape
 .BlueButton {
     display: block;
     width: 190px;
@@ -12,6 +29,7 @@
 }
 // box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit;
 
+// for the text and style
 .BlueButton {
     font-size: 25px;
     font-weight: bold;

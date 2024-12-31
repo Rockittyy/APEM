@@ -1,0 +1,27 @@
+@import "scss/main.scss";
+
+.BlueButton {
+    display: block;
+    width: 190px;
+    height: 60px;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+// box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit;
+
+.BlueButton {
+    font-size: 25px;
+    font-weight: bold;
+    &.dark {
+        background-color: $BlueLight;
+        color: $White;
+    }
+    &.light {
+        background-color: $White;
+        color: $BlueMain;
+    }
+    box-shadow: 8px 8px $BlueMain;
+}

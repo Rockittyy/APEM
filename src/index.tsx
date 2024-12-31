@@ -18,15 +18,10 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-
-    <SimpleBar style={{ maxHeight: "100vh" }}> 
-
+    <SimpleBar style={{ maxHeight: "100vh" }}>
       <BrowserRouter>
-
         <Routes>
-
           <Route path='/'>
-          
             <Route index element={<HomePage />} />
             <Route path='debug'>
               <Route path='1' element={
@@ -38,11 +33,8 @@ root.render(
 
           </Route>
         </Routes>
-
       </BrowserRouter>
-
     </SimpleBar>
-
   </React.StrictMode>
 );
 

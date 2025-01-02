@@ -22,7 +22,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <SimpleBar style={{ maxHeight: "100vh" }}>
+    <SimpleBar style={{ maxHeight: "100vh"}}>
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path='/'>

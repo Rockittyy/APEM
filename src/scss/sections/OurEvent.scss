@@ -33,15 +33,19 @@ section#OurEvent {
             grid-area: 2 / 1 / 3 / 2;
         }
 
+        // a text say "Our event" and the menu button
         header {
             @include center(flex, false, true);
             .viewAll {
                 margin-left: 5%;
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                h2 {
-                    color: $BlueLight;
+                .viewAll.content {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    h2 {
+                        white-space: nowrap;
+                        color: $BlueLight;
+                    }
                 }
             }
             position: relative;
@@ -54,11 +58,13 @@ section#OurEvent {
 
             border-bottom: 10px solid $BlueLight;
         }
+        // the actual inside/content
         .body {
             display: grid;
-            grid-template-columns: 1fr 10fr 1fr; //you will need to use clamp in the future
-            grid-template-rows: 1fr;
-            grid-column-gap: 0px;
+            //you will need to use clamp in the future
+            grid-template-columns: 1fr 10fr 1fr;
+            grid-template-rows: 10fr 1fr;
+            grid-column-gap: 30px;
             grid-row-gap: 0px;
 
             .arrow {
@@ -66,14 +72,17 @@ section#OurEvent {
             }
 
             // I dont know either, I use a generator
-            .right {
+            .left {
                 grid-area: 1 / 1 / 2 / 2;
             }
-            .content {
+            .contentBox {
                 grid-area: 1 / 2 / 2 / 3;
             }
-            .left {
+            .right {
                 grid-area: 1 / 3 / 2 / 4;
+            }
+            .dots {
+                grid-area: 2 / 2 / 3 / 3;
             }
 
             // アニマシォン！！！！
@@ -100,6 +109,33 @@ section#OurEvent {
                     }
                     &:hover > :first-child {
                         left: -$length;
+                    }
+                }
+            }
+            .arrow:not(.active) {
+                opacity: 20%;
+            }
+
+            .contentBox {
+                overflow-x: hidden;
+                & > div {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .dots {
+                @include center(flex);
+                gap: 40px;
+                flex-wrap: nowrap;
+                .dot {
+                    $length: 25px;
+                    border-radius: 50%;
+                    width: $length;
+                    height: $length;
+                    background-color: $BlueLight;
+                    &.active {
+                        background-color: $BlueMain;
                     }
                 }
             }

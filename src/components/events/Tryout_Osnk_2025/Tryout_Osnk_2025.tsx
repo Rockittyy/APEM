@@ -60,7 +60,7 @@ const Tryout_Osnk_2025: FC<Tryout_Osnk_2025Props> = ({ }) => {
 
       </div>
       <div className="buttons">
-        <Button to="./" text='Daftar' className='daftar' />
+        <Button to="./" text='Daftar' className='daftar' disabled />
         <Button to="./" text='Learn more' dark />
         <div className="clickArea hover">
           <Share />

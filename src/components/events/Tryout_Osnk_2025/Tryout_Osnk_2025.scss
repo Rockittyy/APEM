@@ -33,7 +33,7 @@
             & > * {
                 margin-bottom: 20px;
             }
-            .status{
+            .status {
                 color: $BlueLight;
                 font-style: italic;
             }
@@ -56,6 +56,7 @@
                 display: flex;
                 flex-direction: column;
                 & > div {
+                    margin-bottom: 10px;
                     display: flex;
                     align-items: center;
                     gap: 5px;

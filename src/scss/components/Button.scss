@@ -1,6 +1,6 @@
 @import "scss/main.scss";
 
-.clickArea.hover {
+.clickArea.hover:not(.disabled) {
     display: block;
     $height:5px;
     @include ExtraClickRect($height, 0, 0, 0);
@@ -22,7 +22,7 @@
     width: 190px;
     height: 60px;
     border-radius: 20px;
-
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,3 +43,9 @@
     }
     box-shadow: 8px 8px $BlueMain;
 }
+
+    .disabled>.BlueButton{
+        color:$BlueLight;
+        background-color: $BlueMain;
+        box-shadow: 8px 8px $BlueLight;
+    }

@@ -7,7 +7,7 @@ interface SesepuhProps {
 
 const Sesepuh: FC<SesepuhProps> = ({  }) => {
   return (
-    <div>
+    <div className='mainSection' id='Sesepuh'>
      Sesepuh
     </div>
   )

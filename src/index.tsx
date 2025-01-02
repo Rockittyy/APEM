@@ -15,6 +15,8 @@ import Button from 'components/Button';
 
 // !!!temporary!!!
 import OurEvent from 'sections/OurEvent';
+import About from 'sections/About';
+import Sesepuh from 'sections/Sesepuh';
 
 
 const root = ReactDOM.createRoot(
@@ -38,7 +40,9 @@ root.render(
               } />
 
 
-              <Route path='2' element={<OurEvent />} />
+              <Route path='2' element={<Sesepuh />} />
+              <Route path='3' element={<OurEvent />} />
+              <Route path='4' element={<About />} />
 
             </Route>
 

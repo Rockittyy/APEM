@@ -1,0 +1,18 @@
+@import "scss/main.scss";
+
+.greenCity {
+    overflow-x: clip;
+    overflow-y: visible;
+    .canvas {
+        @include center(relative);
+        // static size of the png
+        .holder {
+            position: absolute;
+            & > img {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+}

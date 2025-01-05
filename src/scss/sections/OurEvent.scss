@@ -84,34 +84,6 @@ section#OurEvent {
             .dots {
                 grid-area: 2 / 2 / 3 / 3;
             }
-
-            // アニマシォン！！！！
-            // allr this is confusing indeed so bear with me
-            .arrow .clickArea.swipe.active {
-                $length: 10px;
-                & > :first-child {
-                    transition: all 0.2s ease-in-out 0s;
-                    position: relative;
-                }
-                &.right {
-                    @include ExtraClickRect(0, $length, 0, 0);
-                    & > :first-child {
-                        right: 0;
-                    }
-                    &:hover > :first-child {
-                        right: -$length;
-                    }
-                }
-                &.left {
-                    @include ExtraClickRect(0, 0, 0, $length);
-                    & > :first-child {
-                        left: 0;
-                    }
-                    &:hover > :first-child {
-                        left: -$length;
-                    }
-                }
-            }
             .arrow:not(.active) {
                 opacity: 20%;
             }

@@ -1,0 +1,11 @@
+@import "scss/main.scss";
+
+.Ribbon {
+    @include center(flex);
+    align-items: end;
+    text-wrap: nowrap;
+    .RibbonEnd {
+        width: 100%;
+        margin: 0 -1px;
+    }
+}

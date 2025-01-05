@@ -17,6 +17,8 @@ import Button from 'components/Button';
 import OurEvent from 'sections/OurEvent';
 import About from 'sections/About';
 import Sesepuh from 'sections/Sesepuh';
+import Ribbon from 'components/Ribbon';
+import { ColorsPallate } from 'global';
 
 
 const root = ReactDOM.createRoot(
@@ -24,7 +26,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <SimpleBar style={{ maxHeight: "100vh"}}>
+    <SimpleBar style={{ maxHeight: "100vh" }}>
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
           <Route path='/'>
@@ -43,6 +45,16 @@ root.render(
               <Route path='2' element={<Sesepuh />} />
               <Route path='3' element={<OurEvent />} />
               <Route path='4' element={<About />} />
+
+              <Route path='5' element={
+                <div className='centerFlex' style={{ height: "100vh" }}>
+                  <Ribbon backColor={ColorsPallate.$orange} color={ColorsPallate.$White} >
+                    Juan Cox
+                  </Ribbon>
+                  {/* https://stlouiscountypolice.com/sites/stlcopolice/assets/Cox.jpg */}
+
+                </div>
+              } />
 
             </Route>
 

@@ -11,7 +11,7 @@ interface NavBarProps {
 const NavBar: FC<NavBarProps> = ({ }) => {
   return (
     <nav id='mainNav'>
-      <Link to="/">
+      <Link className='clickArea hover' to="/">
         <Logo />
       </Link>
       <div className="loginSignup">

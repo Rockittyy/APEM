@@ -20,8 +20,8 @@ const HomePage: FC<HomePageProps> = ({ }) => {
             <OurEvent />
             <About />
             <Sesepuh />
-            <FAQ />
-            <Footer />
+            {/* <FAQ />
+            <Footer /> */}
         </div>
     )
 }

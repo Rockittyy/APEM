@@ -1,14 +1,18 @@
 import React, { FC } from 'react'
 
-interface RibbonProps {
+interface RibbonEndProps extends React.HTMLAttributes<SVGSVGElement> {
     color: string,
-    facingRight: boolean,
+    right?: boolean,
+    left?: boolean,
 }
 
-const Ribbon: FC<RibbonProps> = ({ color, facingRight }) => {
+const RibbonEnd: FC<RibbonEndProps> = ({ color, right = true, left = false, style, className, ...rest }) => {
+    right = !left;
     return (
-        <svg width="38" height="28" viewBox="0 0 38 28" fill="none" xmlns="http://www.w3.org/2000/svg"
-            style={{ "transform": `scale(${facingRight ? 1 : -1},1)` }}>
+        <svg width="38" height="28" viewBox="0 0 38 27" fill="none" xmlns="http://www.w3.org/2000/svg"
+            style={Object.assign({}, style, { transform: `scale(${right ? 1 : -1},1)` })}
+            className={`RibbonEnd ${className}`}
+            {...rest}>
             {/* that will flip depend on the paramater */}
 
             <path fill-rule="evenodd" clip-rule="evenodd" d="M21.5672 27.6243C22.2371 27.5603 22.2255 27.3105 21.5155 26.4974C16.8481 21.1521 14.5391 13.4663 15.3971 6.13224C15.524 5.04728 15.5061 4.90037 15.2287 4.74962C15.0431 4.64865 14.5561 4.64202 7.51528 4.64184L-1.90735e-05 4.64166V16.1332V27.6248L2.19852 27.6262C3.40778 27.6269 8.18631 27.6339 12.8177 27.6416C17.4489 27.6492 21.3863 27.6416 21.5672 27.6243ZM37.5097 24.6712C37.8302 24.5881 37.9003 24.4489 37.7616 24.1709C37.7064 24.0605 35.5505 21.9701 33.8249 20.3541C32.8102 19.4037 31.9069 18.5447 30.2937 16.9962C29.5523 16.2843 28.5048 15.2885 27.966 14.7831C26.4331 13.3458 25.9801 12.8921 25.8896 12.7045C25.7348 12.3838 25.8642 12.2114 27.2299 10.9191C30.5971 7.73269 37.5219 1.12267 37.6562 0.966675C37.8939 0.690849 37.9125 0.540449 37.7254 0.409086C37.5183 0.263575 13.8158 0.232134 13.5792 0.376947C13.1902 0.615215 13.3206 0.724911 16.1802 2.56503C17.1983 3.22009 17.1885 3.19389 16.9542 4.66385C16.0839 10.1231 16.6757 15.0273 18.7623 19.6454C19.7311 21.7897 21.2697 24.2441 21.8636 24.5928C22.0551 24.7051 37.0883 24.7806 37.5097 24.6712ZM12.7889 3.61453C15.3852 3.46622 15.3785 3.50972 13.1161 1.47727C10.9027 -0.511148 11.0476 -0.518484 10.3718 1.61597C9.6356 3.94119 9.46988 3.80424 12.7889 3.61453Z"
@@ -17,4 +21,4 @@ const Ribbon: FC<RibbonProps> = ({ color, facingRight }) => {
     )
 }
 
-export default Ribbon;
+export default RibbonEnd;

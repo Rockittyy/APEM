@@ -6,6 +6,13 @@ $SkyPhase2: #b1f1ff;
 $BlueMain: #096f8e;
 $BlueLight: #6aadc8;
 $White: white; //for controll
+// color of the undergrounds
+$DirtCream: #5d5959;
+$grey: #d0d0d0;
+
+// color pallate gold
+$orange: #f78400;
+$yellow: #f7f700;
 
 // font: inter
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
@@ -15,7 +22,7 @@ $White: white; //for controll
     font-family: "Inter", serif;
 }
 
-.Page>*{
+.Page > * {
     overflow-y: visible;
     overflow-x: clip;
 }
@@ -63,7 +70,7 @@ img {
 
 // styles
 
-.disabled{
+.disabled {
     cursor: not-allowed;
 }
 
